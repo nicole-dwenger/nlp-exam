@@ -29,12 +29,15 @@ def main():
     y = np.load("../output/y_array.npy")
     
     # split data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, train_size=0.8, 
-                                                        random_state=5, shuffle=True)
+    X_train, X_test, y_train, y_test = train_test_split(X, 
+                                                        y, 
+                                                        test_size=0.2, 
+                                                        train_size=0.8, 
+                                                        random_state=5, 
+                                                        shuffle=True)
     
     # define neural network
     model = Sequential([
-      #norm,
       InputLayer(input_shape=(300,)),
       Dense(50, activation='relu'),
       Dense(100, activation='relu'),
@@ -55,17 +58,31 @@ def main():
     results = model.evaluate(
         X_test, y_test, verbose=0)
     
-    print(results)
-    
     # plot
     plot_loss(history, "../output/dnn_history_plot.png")
     
+    # predict on new embeddings to be added to lexicon
+    predictions = model.predict(embeddings_to_predict)
+    predictions = list(itertools.chain(*predictions))
+    
+    # Restrict predictions to be between -5 and 5
+    restricted_preds = [5 if sent>5 else sent for sent in predictions]
+    restricted_preds = [-5 if sent<-5 else sent for sent in restricted_preds]
+    
+    print(max(restricted_preds), min(restricted_preds))
+          
+    # match predictions with words
+    predictions_df = pd.DataFrame(list(zip(words_to_predict, predictions, restricted_preds)), columns = ["word", "predicted_sentiment", "restricted_sentiments"])
+    
+    # save predictions to /output
+    predictions_df.to_csv("../output/nn_sentiment_predictions.csv")
+    
     # summary
-    with open("../output/model_summary.txt", "w") as file:
+    with open("../output/nn_model_summary.txt", "w") as file:
         with redirect_stdout(file):
             model.summary()
             
-    plot_model(model, to_file = "../output/model_plot.png", show_shapes = True, show_layer_names = True)
+    plot_model(model, to_file = "../output/nn_model_plot.png", show_shapes = True, show_layer_names = True)
     
 if __name__=="__main__":
     main()
