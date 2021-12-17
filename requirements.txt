@@ -1,0 +1,8 @@
+gensim
+pandas
+sklearn
+numpy
+tensorflow
+pydot
+graphviz
+torch
