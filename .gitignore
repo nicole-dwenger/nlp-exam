@@ -6,6 +6,7 @@ appendix/.ipynb_checkpoints/
 
 data/twitter/
 data/all_sentiments.csv
+data/training_data/outtakes
 
 embeddings/
 lemmas/
@@ -20,6 +21,7 @@ src/notebooks/match_lemmas_embd.ipynb
 src/notebooks/word_frequencies.ipynb
 src/notebooks/sparkmonitor_kernelextension.log
 src/.ipynb_checkpoints/
+src/__pycache__/
 
 utils/twittertokens.py
 utils/.ipynb_checkpoints/
