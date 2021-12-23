@@ -6,3 +6,10 @@ tensorflow
 pydot
 graphviz
 torch
+keras-tuner
+spacy
+asent
+sentida
+danlp
+tabulate
+nltk==3.6.5

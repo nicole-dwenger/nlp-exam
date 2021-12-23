@@ -1,0 +1,13 @@
+MODEL USED FOR PREDICTIONS: neural_network
+2021-12-23 09:27:01.799917
+optimizer: adam
+lr: 0.01
+batch_size: 50
+epochs: 150
+hidden_layers: [500, 150, 50]
+activation: relu
+train_loss: 0.06985625624656677
+val_loss: 0.6606774926185608
+test_loss: 0.6606774926185608
+
+
