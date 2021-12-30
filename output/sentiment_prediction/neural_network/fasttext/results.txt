@@ -1,0 +1,16 @@
+MODEL USED FOR PREDICTIONS: neural_network
+2021-12-30 11:13:44.814732
+optimizer: adam
+lr: 0.001
+batch_size: 100
+epochs: 50
+hidden_layers: [750, 150, 50]
+activation: relu
+train_loss: 1.3270455598831177
+val_loss: 1.42732572555542
+test_loss: 1.4273258447647095
+
+
+METRICS OF PREDICTIONS FOR UNLABELLED WORD EMBEDDINGS:
+Mean: -0.023944372311234474
+Median: -0.03674876689910889
