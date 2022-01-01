@@ -1,0 +1,30 @@
+LEXICON EVAL RESULTS
+Model: neural_network, Embeddings: fasttext, Lexicon: sentida2_expanded
+
+Asent // euparlsent     Class     Precision    Recall     F1
+----------------------  -------  -----------  --------  ------
+                        negativ      1.0       0.3585   0.5278
+                        neutral    0.6222       0.7     0.6588
+                        positiv     0.52       0.7647   0.619
+
+Accuracy                Avg-f1   Weighted-f1
+0.6196                  0.6019     0.6101 
+
+Asent // lccsent     Class     Precision    Recall     F1
+-------------------  -------  -----------  --------  ------
+                     negativ    0.6078      0.3298   0.4276
+                     neutral    0.6608      0.6775   0.6691
+                     positiv    0.4667      0.5969   0.5238
+
+Accuracy             Avg-f1   Weighted-f1
+0.5912               0.5401      0.586 
+
+Asent // twitter_sentiment(val)     Class     Precision    Recall     F1
+----------------------------------  -------  -----------  --------  ------
+                                    negativ    0.7857      0.0747   0.1365
+                                    neutral     0.236      0.8282   0.3673
+                                    positiv    0.5202      0.3093   0.388
+
+Accuracy                            Avg-f1   Weighted-f1
+0.3069                              0.2973     0.2545 
+

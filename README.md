@@ -1,19 +1,21 @@
 # Danish Lexicon Expansion
 
-[Description](#description) | [Repository Structure](#repository-structure) | [Usage](#usage) | [Results and Disucssion](#results-and-discussion) | [Contact](#contact)
+
+
+[Description](#description) | [Repository Structure](#repository-structure) | [Usage](#usage) | [Contact](#contact)
 
 ## Description
 > This project is an exam project for the course NLP of the Master's in Cognitive Science at Aarhus University.
 
-This repository contains scripts and resources for a project, which aimed to expand the Danish sentiment lexicon [sentida2](https://github.com/Guscode/Sentida2). Specifically, the project used word2vec and fasttext word embeddings, trainined of the [Danish Gigaword corpus](https://gigaword.dk) to predict the sentiment of new words and thereby expand the sentiment lexicon. Linear regression and neural network models were trained on the existing sentiment lexicon to predict the sentiment scores of the 10.000 to 20.000 words in the Danish language. Subsequently, the sentiment model [asent](https://github.com/KennethEnevoldsen/asent) was used to compare the base lexicon [sentida2](https://github.com/Guscode/Sentida2) to the extended lexicon. 
+This repository contains scripts and resources for a project, which aimed to expand the Danish sentiment lexicon [sentida2](https://github.com/Guscode/Sentida2). Specifically, the project used word2vec and fasttext word embeddings, trainined of the [Danish Gigaword corpus](https://gigaword.dk) to predict the sentiment of new words and thereby expand the sentiment lexicon. Linear regression and neural network models were trained on the existing sentiment lexicon to predict the sentiment scores of the 10.000 to 20.000 most frequent words in the Danish language. Subsequently, the sentiment model [Asent](https://github.com/KennethEnevoldsen/asent) was used to compare the base lexicon [sentida2](https://github.com/Guscode/Sentida2) to the extended lexica. 
  
 
 ## Repository Structure
 
 ```
 |-- data/                       # Directory containing prepared training and prediction data
-    |-- prediction_data/        # Directory for prepared data for prediction of sentiments
-    |-- training_data           # Directory for prepared data for training of sentiment prediction
+    |-- unlabelled_data/        # Directory for prepared data for prediction of sentiments, i.e. lexicon expansion
+    |-- labelled_data           # Directory for prepared data to develop and evaluate model for sentiment prediction
     
 |-- embeddings/                 # Directory containing embeddings (not on github)
 |-- lemmas/                     # Directory contining list of the most frequenly used lemmas (not on github)
@@ -36,9 +38,11 @@ This repository contains scripts and resources for a project, which aimed to exp
     |-- linear_regression.py    # Linear regression class
     |-- neural_network.py       # Neural network class
     |-- classification_utils.py # Utility functions for sentiment classification
+    |-- twittertokens.py        # Defines tokens for Twitter API (not on github)
 
 |-- README.md
 |-- requirements.txt            # Dependencies to run scripts and notebooks
+|-- bash
 ```
 
 
@@ -46,8 +50,4 @@ This repository contains scripts and resources for a project, which aimed to exp
 
 **!** The scripts have only been tested on Linux, using Python 3.9.1.  
 
-To run the scripts, I recommend cloning this repository and installing necessary dependencies in a virtual environment. Dependencies are listed in the `requirements.txt` file.
-
-## Results and Discussion
-
-
+To run the scripts, I recommend cloning this repository and installing necessary dependencies in a virtual environment. Dependencies are listed in the `requirements.txt` file. To install all necessary requirements, including the Danish spaCy language model, the bash script `install_requirements.sh` shoud be used. 

@@ -5,11 +5,10 @@ numpy
 tensorflow
 pydot
 graphviz
-torch
-keras-tuner
 spacy
-asent
+asent==0.1.2
 sentida
 danlp
 tabulate
 nltk==3.6.5
+tweepy==3.8.0

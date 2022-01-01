@@ -1,13 +1,25 @@
 """
-Utils for Sentiment Classification Task
-Taken from https://github.com/alexandrainst/danlp/tree/master/examples/benchmarks
+UTILS FOR LEXICON EVALUATION USING SENTIMENT CLASSIFICATION TASKS
+
+This script contins utility functions for sentiment classification tasks, used in 
+../scr/lexicon_evaluation.py
+
+Many of the functions are taken and adopted from:
+https://github.com/alexandrainst/danlp/tree/master/examples/benchmarks
 """
+
+# --- DEPENDENCIES ---
 
 import sys, os
 import numpy as np
 from tabulate import tabulate
 
+# --- FUNCTIONS ---
+
 def sentiment_score_to_label(score):
+    """
+    Function to turn continuous scores into classes of positive/neutral/negative
+    """
     if score == 0:
         return 'neutral'
     if score < 0:
@@ -15,18 +27,24 @@ def sentiment_score_to_label(score):
     else:
         return 'positiv'
 
-def sentiment_score_to_label_asent(score):
-    # the threshold of 0.4 is fitted on a manually annotated twitter corpus for sentiment on 1327 examples
-    if score > 0.8:
+def sentiment_score_to_label_asent(score, pos_threshold, neg_threshold):
+    """
+    Function to turn continuous scores between -1 and 1 into classes of positive/neutral/negative
+    - This should be used for asent to classify document compound scores estiamted by asent
+    """
+    if score > pos_threshold:
         return 'positiv'
-    if score < -0.2:
+    if score < neg_threshold:
         return 'negativ'
     else:
         return 'neutral'
     
 def f1_class(k, true, pred):
+    """
+    Function adopted from https://github.com/alexandrainst/danlp/tree/master/examples/benchmarks
+    - Calculates values for F1 report of sentiment classifiction task
+    """
     tp = np.sum(np.logical_and(pred == k, true == k))
-
     fp = np.sum(np.logical_and(pred == k, true != k))
     fn = np.sum(np.logical_and(pred != k, true == k))
     if tp == 0:
@@ -37,8 +55,11 @@ def f1_class(k, true, pred):
     return tp, fp, fn, precision, recall, f1
 
 
-def f1_report(true, pred, modelname="", dataname="", word_level=False, bio=False):
-
+def f1_report(true, pred, modelname="", dataname="", word_level=False, bio=False, output_file=""):
+    """
+    Function adopted from https://github.com/alexandrainst/danlp/tree/master/examples/benchmarks
+    - Creates pretty F1 report based on true and predicted values
+    """
     if bio:
         return classification_report(true, pred, digits=4)
 
@@ -70,7 +91,7 @@ def f1_report(true, pred, modelname="", dataname="", word_level=False, bio=False
     data_b.append([round(acc, 4), round(avg, 4), round(wei, 4), '', ''])
     print(tabulate(data_b, headers=headers_b, colalign=aligns_b), '\n')
     
-    #with open(f"{output_path}/f1_report.txt", 'a') as f:
-    #    print(tabulate(data_b, headers=headers_b, colalign=aligns_b), '\n', file=f)
-
-    
+    # saves f1 report to output fil
+    with open(output_file, 'a') as f:
+        print(tabulate(data_b, headers=headers_b, colalign=aligns_b), '\n', file=f)
+        f.close()
