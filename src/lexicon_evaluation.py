@@ -143,8 +143,12 @@ def main(lexicon, model_type, embedding_type, pos_threshold, neg_threshold, outp
             setup_twitter()
             # load data, concatenating val and train data
             twitSent = TwitterSent()
-            df_val, df_train = twitSent.load_with_pandas()
-            df = pd.concat([df_val, df_train])
+            df_val, _ = twitSent.load_with_pandas()
+            # df = pd.concat([df_val, df_train])
+            
+            # evaluate on the validation data, in line with danlp
+            df = df_val
+            print(len(df))
             
             # get the compound score for each document
             print(f"[INFO] Data of {dataset} loaded...")

@@ -21,10 +21,10 @@ Accuracy             Avg-f1   Weighted-f1
 
 Asent // twitter_sentiment(val)     Class     Precision    Recall     F1
 ----------------------------------  -------  -----------  --------  ------
-                                    negativ    0.7857      0.0747   0.1365
-                                    neutral     0.236      0.8282   0.3673
-                                    positiv    0.5202      0.3093   0.388
+                                    negativ    0.7692      0.0897   0.1606
+                                    neutral    0.2478      0.783    0.3764
+                                    positiv    0.4571      0.3137   0.3721
 
 Accuracy                            Avg-f1   Weighted-f1
-0.3069                              0.2973     0.2545 
+0.3132                              0.3031     0.2638 
 

@@ -1,5 +1,5 @@
 LEXICON EVAL RESULTS
-Model: linear_regression, Embeddings: word2vec, Lexicon: sentida2
+Model: -, Embeddings: -, Lexicon: sentida2
 
 Asent // euparlsent     Class     Precision    Recall     F1
 ----------------------  -------  -----------  --------  ------
@@ -21,10 +21,10 @@ Accuracy             Avg-f1   Weighted-f1
 
 Asent // twitter_sentiment(val)     Class     Precision    Recall     F1
 ----------------------------------  -------  -----------  --------  ------
-                                    negativ    0.7647      0.0354   0.0676
-                                    neutral    0.2259      0.8954   0.3608
-                                    positiv    0.4867      0.1467   0.2254
+                                    negativ    0.8462      0.0493   0.0932
+                                    neutral    0.2448      0.8962   0.3846
+                                    positiv    0.4667      0.1373   0.2121
 
 Accuracy                            Avg-f1   Weighted-f1
-0.2592                              0.2179     0.1753 
+0.2784                              0.23        0.193 
 
