@@ -1,4 +1,4 @@
-# Script Directory
+# Source Code Directory
 
 ### notebooks/
 This directory contains the notebooks `prepare_labelled_data.ipynb` and `prepare_unlabelled_data.ipynb` to prepare the labelled, and unlabelled data, of which the output is stored in corresponding directories in `data/`. The notebook `expanded_lexicon_contribution.ipynb` calculates the contribution of the lexicon expansion for the three different datasets used in the `lexcion_evaluation.py`
