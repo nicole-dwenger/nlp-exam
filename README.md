@@ -22,15 +22,15 @@ This repository contains scripts and resources for a project, which aimed to exp
 |-- lexicons/                   # Directory containing base lexicon sentida2 (not on github)
 
 |-- output/                     # Directory for outputs 
-    |-- grid_search             # Directory containing output of grid search of linear regression and neural network models
-    |-- sentiment_prediction    # Directory containing output of final linear regression and neural network model, and sentiment predictions  
-    |-- lexicon_evaluation      # Directory containing output of lexicon evaluation of sentiment task
+    |-- grid_search/            # Directory containing output of grid search of linear regression and neural network models
+    |-- sentiment_prediction/   # Directory containing output of final linear regression and neural network model, and sentiment predictions  
+    |-- lexicon_evaluation/     # Directory containing output of lexicon evaluation of sentiment task
  
 |-- src/                        # Directory for python scripts
-    |-- notebooks               # Directory for notebooks used for data preprocessing
+    |-- notebooks/              # Directory for notebooks used for data preprocessing
     |-- grid_search.py          # Script for grid search of linear regression and neural network parameters
     |-- sentiment_prediction.py # Script for model evaluation on test data and sentiment prediction 
-    |-- lexicon_evaluation.py.  # Script for lexicon evaluation of sentiment classification task
+    |-- lexicon_evaluation.py   # Script for lexicon evaluation of sentiment classification task
     
 |-- utils/                      # Directory for utility scripts
     |-- data_utils.py           # Utility functions for data processing
