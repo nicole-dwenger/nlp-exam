@@ -82,6 +82,9 @@ def main(lexicon, model_type, embedding_type, pos_threshold, neg_threshold, outp
         EXPANSION = EXPANSION.drop(columns =["predicted_sentiment"])
         LEXICON = pd.concat([LEXICON, EXPANSION])
         
+    # print length of lexicon to ensure
+    print(len(LEXICON))
+        
     # put lexicon into dictionary
     LEXICON = dict(zip(LEXICON.word, LEXICON.score))
     print(f"[INFO] {lexicon} prepared!")
