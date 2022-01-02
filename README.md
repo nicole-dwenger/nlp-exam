@@ -2,7 +2,7 @@
 
 
 
-[Description](#description) | [Repository Structure](#repository-structure) | [Usage](#usage) | [Contact](#contact)
+[Description](#description) | [Repository Structure](#repository-structure) | [Usage](#usage) | [Contributors](#contributors)
 
 ## Description
 > This project is an exam project for the course NLP of the Master's in Cognitive Science at Aarhus University.
@@ -15,7 +15,7 @@ This repository contains scripts and resources for a project, which aimed to exp
 ```
 |-- data/                       # Directory containing prepared training and prediction data
     |-- unlabelled_data/        # Directory for prepared data for prediction of sentiments, i.e. lexicon expansion
-    |-- labelled_data           # Directory for prepared data to develop and evaluate model for sentiment prediction
+    |-- labelled_data/          # Directory for prepared data to develop and evaluate model for sentiment prediction
     
 |-- embeddings/                 # Directory containing embeddings (not on github)
 |-- lemmas/                     # Directory contining list of the most frequenly used lemmas (not on github)
@@ -42,12 +42,16 @@ This repository contains scripts and resources for a project, which aimed to exp
 
 |-- README.md
 |-- requirements.txt            # Dependencies to run scripts and notebooks
-|-- bash
+|-- install_requirements.txt     # Bash script to install dependencies and language models
 ```
 
+The files described in the repository structure, which are not on GitHub can be provided on request. 
 
 ## Usage
 
 **!** The scripts have only been tested on Linux, using Python 3.9.1.  
 
 To run the scripts, I recommend cloning this repository and installing necessary dependencies in a virtual environment. Dependencies are listed in the `requirements.txt` file. To install all necessary requirements, including the Danish spaCy language model, the bash script `install_requirements.sh` shoud be used. 
+
+## Contributors
+This project was developed in a joined effort by Sofie Ditmer, Louise Nyholm Jensen and Nicole Dwenger.
